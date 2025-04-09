@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.batch;
+package com.example.ai;
 
 import org.springframework.ai.chat.client.ChatClient;
 import org.springframework.aot.hint.annotation.RegisterReflectionForBinding;

@@ -1,0 +1,20 @@
+plugins {
+    id "java"
+    id "org.springframework.boot"
+    id "org.springframework.aot.smoke-test"
+    id "org.graalvm.buildtools.native"
+}
+
+dependencies {
+    implementation(enforcedPlatform(org.springframework.boot.gradle.plugin.SpringBootPlugin.BOM_COORDINATES))
+
+    // spring ai
+    implementation(enforcedPlatform("org.springframework.ai:spring-ai-bom:${springAiVersion}"))
+    implementation("org.springframework.ai:spring-ai-starter-model-ollama:${springAiVersion}")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+
+    appTestImplementation(project(":aot-smoke-test-support"))
+    appTestImplementation("org.awaitility:awaitility:4.2.0")
+}

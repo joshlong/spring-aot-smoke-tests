@@ -14,7 +14,7 @@
 * limitations under the License.
 */
 
-package com.example.batch;
+package com.example.ai;
 
 import java.time.Duration;
 
