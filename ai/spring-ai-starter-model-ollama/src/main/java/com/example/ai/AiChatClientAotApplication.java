@@ -30,22 +30,22 @@ import org.springframework.context.annotation.Bean;
 @RegisterReflectionForBinding(Joke.class)
 public class AiChatClientAotApplication {
 
-    public static void main(String[] args) {
-        SpringApplication.run(AiChatClientAotApplication.class, args);
-    }
+	public static void main(String[] args) {
+		SpringApplication.run(AiChatClientAotApplication.class, args);
+	}
 
-    @Bean
-    CommandLineRunner aiChatClientCommandLineRunner(ChatClient ai) {
-        return args -> {
-            var joke = ai.prompt("tell me a joke!").call().entity(Joke.class);
-            System.out.println(joke);
-        };
-    }
+	@Bean
+	CommandLineRunner aiChatClientCommandLineRunner(ChatClient ai) {
+		return args -> {
+			var joke = ai.prompt("tell me a joke!").call().entity(Joke.class);
+			System.out.println(joke);
+		};
+	}
 
-    @Bean
-    ChatClient chatClient(ChatClient.Builder builder) {
-        return builder.build();
-    }
+	@Bean
+	ChatClient chatClient(ChatClient.Builder builder) {
+		return builder.build();
+	}
 
 }
 
