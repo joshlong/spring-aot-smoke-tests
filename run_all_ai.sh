@@ -4,7 +4,9 @@
 #./gradlew :ai:spring-ai-starter-model-openai:build
 #./gradlew :ai:spring-ai-starter-model-openai:appTest
 
-for project in spring-ai-starter-model-openai spring-ai-starter-model-ollama ; do
+old="spring-ai-starter-model-openai spring-ai-starter-model-ollama"
+for project in spring-ai-starter-model-anthropic ; do
   echo "testing... $project "
-  ./gradlew :ai:${project}:nativeAppTest
+  ./gradlew   -PfromMavenLocal=org.springframework.ai :ai:${project}:nativeAppTest
+#  ./gradlew --scan -PfromMavenLocal=org.springframework.ai :ai:${project}:nativeAppTest
 done
