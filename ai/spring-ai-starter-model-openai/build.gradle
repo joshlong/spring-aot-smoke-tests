@@ -10,7 +10,9 @@ dependencies {
 
     // spring ai
     implementation(enforcedPlatform("org.springframework.ai:spring-ai-bom:${springAiVersion}"))
+
     implementation("org.springframework.ai:spring-ai-starter-model-openai:${springAiVersion}")
+
     implementation("org.springframework.boot:spring-boot-starter-web")
 
     testImplementation("org.springframework.boot:spring-boot-starter-test")
